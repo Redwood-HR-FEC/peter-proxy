@@ -15,9 +15,9 @@ const httpProxy = require("http-proxy");
 app.use("/:id", express.static(`${__dirname}/../public`));
 
 const apiProxy = httpProxy.createProxyServer({});
-const qnaService = "http://localhost:3001";
+const qnaService = "http://18.236.102.69:3001";
 const productDetails = "http://18.236.101.88:3002";
-const revService = "http://localhost:3003";
+const revService = "http://18.236.82.217:3003";
 // ServerThree = "http://localhost:3003";
 
 app.all("/getsingleproduct/*", function (req, res) {
@@ -25,24 +25,24 @@ app.all("/getsingleproduct/*", function (req, res) {
   apiProxy.web(req, res, { target: productDetails });
 });
 
-// app.all("/qna-service/*", (req, resp) => {
-//   console.log("Proxy to Q and A server");
-//   apiProxy.web(req, resp, { target: qnaService });
-// });
-// app.all("/questions/*", (req, resp) => {
-//   console.log("Proxy to Q and A server API");
-//   apiProxy.web(req, resp, { target: qnaService });
-// });
+app.all("/qna-service/*", (req, resp) => {
+  console.log("Proxy to Q and A server");
+  apiProxy.web(req, resp, { target: qnaService });
+});
+app.all("/questions/*", (req, resp) => {
+  console.log("Proxy to Q and A server API");
+  apiProxy.web(req, resp, { target: qnaService });
+});
 
-// app.all("/rev-service/*", (req, resp) => {
-//   console.log("Proxy to Review server");
-//   apiProxy.web(req, resp, { target: revService });
-// });
+app.all("/rev-service/*", (req, resp) => {
+  console.log("Proxy to Review server");
+  apiProxy.web(req, resp, { target: revService });
+});
 
-// app.all("/review-api/*", (req, resp) => {
-//   console.log("Proxy to Review server API");
-//   apiProxy.web(req, resp, { target: revService });
-// });
+app.all("/review-api/*", (req, resp) => {
+  console.log("Proxy to Review server API");
+  apiProxy.web(req, resp, { target: revService });
+});
 // app.all("/one", function (req, res) {
 //   console.log("redirecting to Server1");
 //   apiProxy.web(req, res, { target: serverOne });
