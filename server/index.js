@@ -15,9 +15,9 @@ const httpProxy = require("http-proxy");
 app.use("/:id", express.static(`${__dirname}/../public`));
 
 const apiProxy = httpProxy.createProxyServer({});
-const qnaService = "http://18.236.102.69:3001";
-const productDetails = "http://18.236.101.88:3002";
-const revService = "http://18.236.82.217:3003";
+const qnaService = "http://54.184.20.122:3001";
+const productDetails = "http://34.212.75.246:3002";
+const revService = "http://44.228.132.116:3003";
 // ServerThree = "http://localhost:3003";
 
 app.all("/getsingleproduct/*", function (req, res) {
