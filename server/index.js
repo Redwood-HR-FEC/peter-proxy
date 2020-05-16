@@ -60,4 +60,4 @@ app.all("/getsingleproduct/*", function (req, res) {
 //   req.
 // })
 
-app.listen(PORT, () => console.log("listening on port 3000"));
+app.listen(PORT, () => console.log(`listening on port ${PORT}`));
