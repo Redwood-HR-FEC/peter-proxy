@@ -2,9 +2,13 @@
 const express = require("express");
 const app = express();
 const axios = require("axios").default;
+const compression = require("compression");
+
 // const cors = require("cors");
 // app.use(cors());
 app.use(express.json());
+app.use(compression());
+
 const PORT = process.env.PORT || 3000;
 const httpProxy = require("http-proxy");
 //
