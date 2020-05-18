@@ -8,8 +8,10 @@
   <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
  -->
-  <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <link rel="preconnect" href="https://ghrsea09-fec-review-service.s3-us-west-2.amazonaws.com">
+  <link rel="preconnect" href="https://ghrsea09-fec-proxy.s3-us-west-2.amazonaws.com">
+  <!-- <script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script> -->
   <!-- <link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
   <link href="//db.onlinewebfonts.com/c/157c6cc36dd65b1b2adc9e7f3329c761?family=Amazon+Ember" rel="stylesheet"
     type="text/css" />
@@ -38,9 +40,11 @@
     <div class="service" id="review-service"> </div>
     <div class="service" id="app"></div>
   </div>
-  <script src="details-bundle.js"></script>
-  <script src="qna-service.js"></script>
-  <script src="rev-service.js"></script>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="/description-service/bundle.js"></script>
+  <script src="/qna-service/bundle.js"></script>
+  <script src="/rev-service/bundle.js"></script>
 </body>
 
 </html>
