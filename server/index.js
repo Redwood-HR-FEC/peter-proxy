@@ -24,6 +24,10 @@ const productDetails = "http://34.212.75.246:3002";
 const revService = "http://44.228.132.116:3003";
 // ServerThree = "http://localhost:3003";
 
+app.all("/description-service/*", (req, resp) => {
+  console.log("Proxy to Description server");
+  apiProxy.web(req, resp, { target: productDetails });
+});
 app.all("/getsingleproduct/*", function (req, res) {
   console.log("redirecting to details");
   apiProxy.web(req, res, { target: productDetails });
